@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title>Customer Field</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body ng-controller="ctrl">
+	<form ng-submit="saveCustomer()">
+		Nama <input type="text" ng-model="form.name" /> <br/>
+		Email <input type="text" ng-model="form.email" /> <br/>
+		Telepon <input type="text" ng-model="form.phone" /> <br/>
+		<input type="submit" value="Submit" />
+	</form>
+	
+	<br/><br/>
+	
+	<table border="1">
+		<tr>
+			<th>Nama</th>
+			<th>Email</th>
+			<th>Telepon</th>
+		</tr>
+		<tr ng-repeat="c in customers">
+			<td>{{c.name}}</td>
+			<td>{{c.email}}</td>
+			<td>{{c.phone}}</td>
+		</tr>
+	</table>
+	
+</body>
+</html>
